@@ -18,7 +18,7 @@ public class EmailSendingTest {
 
     @BeforeClass
     public void init(){
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver");
         driver = new ChromeDriver();
     }
 
