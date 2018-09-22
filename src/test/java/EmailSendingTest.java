@@ -1,7 +1,4 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -45,10 +42,7 @@ public class EmailSendingTest {
         emailNext.click();
 
         WebElement password = driver.findElement(By.name("password"));
-        password.sendKeys("QwErTy123456");
-
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-        executor.executeScript("document.getElementById('passwordNext').click();");
+        password.sendKeys("QwErTy123456" + Keys.ENTER);
 
         WebElement openFormButton = driver.findElement(By.cssSelector("div.T-I.J-J5-Ji.T-I-KE.L3"));
         openFormButton.click();
@@ -57,12 +51,12 @@ public class EmailSendingTest {
         to.sendKeys("kachanserhii@gmail.com");
 
         WebElement subject = driver.findElement(By.name("subjectbox"));
-        subject.sendKeys("Test");
+        subject.sendKeys("SUBJECT");
 
         WebElement text = driver.findElement(By.cssSelector("div.Am.Al.editable.LW-avf"));
-        text.sendKeys("Something");
+        text.sendKeys("TEXT");
 
-        WebElement sendButton = driver.findElement(By.xpath("//table/tbody/tr/td[2]/table/tbody/tr[2]/td/div/div/div[4]/table/tbody/tr/td[1]/div/div[2]"));
+        WebElement sendButton = driver.findElement(By.cssSelector("div.T-I.J-J5-Ji.aoO.T-I-atl.L3"));
         sendButton.click();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
